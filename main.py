@@ -24,21 +24,37 @@ def generate_password():
   #create empty password list
   password = []
 
-  #choose character set
-  def choose_character_set():
-    character_set = random.randrange(1, 4)
-    set_length = random.randrange(2, (password_length - 2))
-    if (character_set == 1):
-      password.extend(random.choices(char_1, k = int(set_length)))
-    elif (character_set == 2):
-      password.extend(random.choices(char_2, k = int(set_length)))
-    elif (character_set == 3):
-      password.extend(random.choices(char_3, k = int(set_length)))
-    elif (character_set == 4):
-      password.extend(random.choices(char_4, k = int(set_length)))
-    print(password)
+  #populate password list
+  def random_character_generator(password_length, excluded_character_types):
+    while len(password) < password_length:
+      #choose character set
+      def choose_character_set():
+        character_set = random.randrange(1, 4)
+        set_length = random.randrange(1, (password_length - 2))
+        if (character_set == 1):
+          password.extend(random.choices(char_1, k = int(set_length)))
+        elif (character_set == 2):
+          password.extend(random.choices(char_2, k = int(set_length)))
+        elif (character_set == 3):
+          password.extend(random.choices(char_3, k = int(set_length)))
+        elif (character_set == 4):
+          password.extend(random.choices(char_4, k = int(set_length)))
+        print(password)
+    
+      choose_character_set()
 
-  choose_character_set()
+      #shuffle generated password
+      random.shuffle(password)
+      print(password)
+      random.shuffle(password)
+      print(password)
+      random.shuffle(password)
+      print(password)
+
+      
+      
+    
+  random_character_generator(password_length, excluded_character_types)
 
 # Prompt user for excluded character types:
 # “Would you like to exclude any character types?
