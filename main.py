@@ -46,10 +46,6 @@ def generate_password():
       #shuffle generated password
       random.shuffle(password)
       print(password)
-      random.shuffle(password)
-      print(password)
-      random.shuffle(password)
-      print(password)
 
       #check for more than 2 characters of the same type in a row
       

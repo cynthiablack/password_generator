@@ -15,8 +15,8 @@ This program generates a password on demand. Password length is chosen by the us
 
 The program was written in Python3. When the generate_password() function is called, the user is asked for two inputs: password length and which character types (if any) to exclude. The program validates these inputs; if the user inputs enters an invalid response, the prompt runs again until a valid response is entered.
 
-The next steps of the program rely heavily on random number generation: two random numbers are generated for each section of the password: one to select the target character set and a second to choose how many characters to pull from the selected set. Further random-number logic is used to select the characters (via the _choices_ method built into Python's _Random_ module). The selected characters are then added to the password and the random-number steps of the progress run again untl the desired password length is reached.
+The next steps of the program rely heavily on random number generation: two random numbers are generated for each section of the password: one to select the target character set and a second to choose how many characters to pull from the selected set. Further random-number logic is used to select the characters (via the _choices_ method built into Python's _Random_ module). The selected characters are then added to the password and the random-number steps of the progress run again untl twice the desired password length is reached.
 
-Once the user's desired password length is reached, the program shuffles the generated password, checks for and replaces any duplicate values, shuffles the password again, and finally displays this final version of the password.
+Next, the program shuffles the generated password, checks for and replaces any duplicate values, shuffles the password again, truncates the generated password to the desired lenght, then finally displays this final version of the password.
 
 The user is then asked if they would like to run the program again.
