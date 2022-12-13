@@ -1,3 +1,4 @@
+import random
 import string
 # Create variables for each character type
 char_1 = string.ascii_uppercase
@@ -18,7 +19,22 @@ def generate_password():
         excluded_character_types = int(input("Would you like to exclude any character types?\n1 UPPERCASE letters\n2 lowercase letters\n3 numbers\n4 punctuation\n0 include all character types: "))
     print("You chose " + str(excluded_character_types))
 
-
+    def random_character_generator(password_length, excluded_character_types):
+    password = []
+    #while len(password) < password_length:
+    character_set = -1
+      #while character_set != excluded_character_types:
+    def choose_character_set():
+      character_set = random.randrange(1, 4)
+      set_length = random.randrange(2, password_length)
+      
+      
+      # password.extend(random.choices(character_set, weights = [10, 1, 1], k = set_length))
+      print(password)
+      
+    choose_character_set()
+  
+  random_character_generator(password_length, excluded_character_types)
 
 # Prompt user for excluded character types:
 # “Would you like to exclude any character types?
@@ -28,18 +44,9 @@ def generate_password():
 # 4 punctuation
 # 0 include all character types”
 
-# Until user enters 0, 1, 2, 3, 4
-# Remind user to enter 0, 1, 2, 3, or 4
-# Prompt user to enter a valid number
-# When user enters 0, 1, 2, 3, or 4
-# Store entered number in excluded_character_types variable
-
 # Function random_character_generator(password_length, excluded_character_types)
 
-# set password = []
-# loop until len(password) == password_length
-# function choose_character_set()
-# set character_set = 0
+
 # loop until random_number != excluded_character_types
 # choose random_number from 1, 2, 3, 4
 # when excluded_character_types != random_number
