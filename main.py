@@ -11,14 +11,14 @@ def generate_password():
     #until the password length is at least 6 characters and no more than 24 characters, prompt the user to choose a length
     while password_length < 6 or password length < 24:
         password_length = int(input("To create a password, please enter your desired password length. Length must be a number between 6 and 24: "))
+    print("Your password will be " + str(password_length) + " characters long.")
+
+    excluded_character_types = -1
+    while excluded_character_types < 0 or excluded_character_types > 4:
+        excluded_character_types = int(input("Would you like to exclude any character types?\n1 UPPERCASE letters\n2 lowercase letters\n3 numbers\n4 punctuation\n0 include all character types: "))
+    print("You chose " + str(excluded_character_types))
 
 
-
-# Until user enters a number less than 6 or greater than 24
-# Remind user to enter a number that is between 6 and 24
-# Prompt user to enter a number between 6 and 24
-# When user enters a number between 6 and 24
-# Store entered number in password_length variable
 
 # Prompt user for excluded character types:
 # “Would you like to exclude any character types?
