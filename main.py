@@ -1,12 +1,19 @@
 import string
+# Create variables for each character type
 char_1 = string.ascii_uppercase
 char_2 = string.ascii_lowercase
 char_3 = string.digits
 char_4 = string.punctuation
 
-# Function generate_password()
-# Prompt user for desired password length
-# “To generate a password, please enter your desired password length. Length must be a number between 6 and 24.”
+#Generate a new password
+def generate_password():
+    password_length = 0
+    #until the password length is at least 6 characters and no more than 24 characters, prompt the user to choose a length
+    while password_length < 6 or password length < 24:
+        password_length = int(input("To create a password, please enter your desired password length. Length must be a number between 6 and 24: "))
+
+
+
 # Until user enters a number less than 6 or greater than 24
 # Remind user to enter a number that is between 6 and 24
 # Prompt user to enter a number between 6 and 24
