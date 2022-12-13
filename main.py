@@ -1,10 +1,5 @@
 import random
 import string
-# Create variables for each character type
-char_1 = string.ascii_uppercase
-char_2 = string.ascii_lowercase
-char_3 = string.digits
-char_4 = string.punctuation
 
 #Generate a new password
 def generate_password():
@@ -26,62 +21,35 @@ def generate_password():
 
   #populate password list
   def random_character_generator(password_length, excluded_character_types):
-    while len(password) < password_length:
+    while len(password) < (password_length * 2):
       #choose character set
       def choose_character_set():
         character_set = random.randrange(1, 4)
         set_length = random.randrange(1, (password_length - 2))
+
+        #character_type corresponds to user character type menu
         if (character_set == 1):
-          password.extend(random.choices(char_1, k = int(set_length)))
+          password.extend(random.choices(string.ascii_uppercase, k = int(set_length)))
         elif (character_set == 2):
-          password.extend(random.choices(char_2, k = int(set_length)))
+          password.extend(random.choices(string.ascii_lowercase, k = int(set_length)))
         elif (character_set == 3):
-          password.extend(random.choices(char_3, k = int(set_length)))
+          password.extend(random.choices(string.digits, k = int(set_length)))
         elif (character_set == 4):
-          password.extend(random.choices(char_4, k = int(set_length)))
+          password.extend(random.choices(string.punctuation, k = int(set_length)))
         print(password)
-    
+        
       choose_character_set()
 
-      #shuffle generated password
-      random.shuffle(password)
-      print(password)
+    #remove duplicate values
+    new_password = list(dict.fromkeys(password))
+    print(new_password)
 
-      #check for more than 2 characters of the same type in a row
-      
-    
+    #shuffle generated password
+    random.shuffle(new_password)
+    print(new_password)
+
+    #convert password to string and return password of desired length
+    password_str = ''
+    print(password_str.join(new_password[0:password_length]))
+
   random_character_generator(password_length, excluded_character_types)
-
-# Prompt user for excluded character types:
-# “Would you like to exclude any character types?
-# 1 UPPERCASE letters
-# 2 lowercase letters
-# 3 numbers
-# 4 punctuation
-# 0 include all character types”
-
-# Function random_character_generator(password_length, excluded_character_types)
-
-
-# loop until random_number != excluded_character_types
-# choose random_number from 1, 2, 3, 4
-# when excluded_character_types != random_number
-# update character_set = random_number
-
-# function choose_set_length()
-# set set_length = 0
-# set temp_list = []
-# choose random_set_length > 1
-# update set_length = random_set_length
-# if set_length <= password_length
-# update temp_list = random.choices(character_set, k = set_length)
-# password.extend(temp_list)
-# when len(password) == password_length
-# print(password)
-# function request_new_password()
-# Prompt user:
-# “Would you like to generate another password? Y N”
-# if user enters Y
-# generate_password()
-# else
-# pass
