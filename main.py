@@ -51,7 +51,7 @@ def generate_password():
       random.shuffle(password)
       print(password)
 
-      
+      #check for more than 2 characters of the same type in a row
       
     
   random_character_generator(password_length, excluded_character_types)
