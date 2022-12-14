@@ -8,7 +8,7 @@ def generate_password():
   #until the password length is at least 6 characters, prompt the user to choose a length
   while password_length < 6 or password_length > 24:
     password_length = int(input("To create a password, please enter your desired password length. Length must be a number between 6 and 24: "))
-  print("Your password will be " + str(password_length) + " characters long.\n")
+    print("Your password will be " + str(password_length) + " characters long.\n")
 
   #set excluded characters
   excluded_character_types = -1
